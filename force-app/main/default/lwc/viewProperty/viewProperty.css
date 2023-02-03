@@ -1,0 +1,41 @@
+.photoContainer {
+    height:350px; 
+    position:relative; 
+    overflow:hidden;
+  }
+  
+  .photobanner {
+    position:absolute; 
+    top:0; 
+    left: -1.5em; 
+    white-space: nowrap;
+    animation: bannermove 20s linear infinite;
+  }
+  
+  .photobanner span {  
+    padding: 0 0.5em 0 0.5em;
+  }
+  
+  @keyframes bannermove {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-200%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+  }
+
+  .left-column {
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  .buttonEnquire {
+    --sds-c-button-text-color: black;
+  }

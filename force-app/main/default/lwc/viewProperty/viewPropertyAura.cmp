@@ -1,0 +1,3 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <c:targetLWC label="Navigated From Another LWC Using Aura"/>
+</aura:component>

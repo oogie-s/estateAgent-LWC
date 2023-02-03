@@ -1,0 +1,7 @@
+.indProperty a{
+    text-decoration: underline !important;
+}
+
+.textContainer {
+    overflow: auto;
+}

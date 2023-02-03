@@ -1,0 +1,57 @@
+<template>
+    <lightning-card title="ViewProperties" icon-name="custom:custom14">
+		<lightning-tabset variant="scoped" class="tabs">
+            <lightning-tab label="For Sale" onactive={tabActivated}>
+                <template if:true={saleProperties.data}>
+                    <template for:each={saleProperties.data} for:item="property">
+                        <div class="slds-grid slds-gutters" key={property.Id}>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-m-top_medium">
+                                <img
+                                    data-id={property.Id}
+                                    src={property.Photo_1__c} />
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3 slds-m-top_medium textContainer" data-id={property.Id}>
+                                <a data-id={property.Id} onclick={viewProperty} class="indProperty">{property.Name}</a><br>
+                                <lightning-formatted-rich-text value={property.Description__c}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="For Rent" onactive={tabActivated}>
+                <template if:true={rentProperties.data}>
+                    <template for:each={rentProperties.data} for:item="property">
+                        <div class="slds-grid slds-gutters" key={property.Id}>
+                            <div class="slds-col">
+                                <img
+                                    data-id={property.Id}
+                                    src={property.Photo_1__c} />
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3 slds-m-top_medium textContainer" data-id={property.Id}>
+                                <a data-id={property.Id} onclick={viewProperty} class="indProperty">{property.Name}</a><br>
+                                <lightning-formatted-rich-text value={property.Description__c}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </lightning-tab>
+            <lightning-tab label="Sold" onactive={tabActivated}>
+                <template if:true={soldProperties.data}>
+                    <template for:each={soldProperties.data} for:item="property">
+                        <div class="slds-grid slds-gutters" key={property.Id}>
+                            <div class="slds-col">
+                                <img
+                                    data-id={property.Id}
+                                    src={property.Photo_1__c} />
+                            </div>
+                            <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3 slds-m-top_medium textContainer" data-id={property.Id}>
+                                <a data-id={property.Id} onclick={viewProperty} class="indProperty">{property.Name}</a><br>
+                                <lightning-formatted-rich-text value={property.Description__c}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </lightning-tab>
+		</lightning-tabset>
+    </lightning-card>
+  </template>

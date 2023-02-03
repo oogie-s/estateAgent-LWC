@@ -1,0 +1,4 @@
+<aura:component implements="lightning:isUrlAddressable">
+    <c:viewProperty></c:viewProperty>
+</aura:component>
+

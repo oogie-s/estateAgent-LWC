@@ -1,0 +1,15 @@
+<template>
+    <lightning-modal-header></lightning-modal-header>
+    <lightning-modal-body>
+        <lightning-input label="First Name"></lightning-input>
+        <lightning-input label="Last Name"></lightning-input>
+        <lightning-input label="Email Address"></lightning-input>
+        <lightning-input class="slds-p-right_xx-large" type="checkbox" data-id="checkbox" label="I consent to be contacted by group One for marketing." ></lightning-input>
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button-group class="slds-align_absolute-center">
+            <lightning-button variant="destructive" label="Cancel" onclick={handleOkay}></lightning-button>
+            <lightning-button variant="brand" label="Send" onclick={handleOkay} class="slds-m-left_x-small"></lightning-button>
+        </lightning-button-group>
+    </lightning-modal-footer>
+</template>
