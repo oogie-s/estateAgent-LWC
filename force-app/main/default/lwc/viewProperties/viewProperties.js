@@ -5,17 +5,14 @@ import getListofSoldProperties from '@salesforce/apex/PropertyController.getList
 
 export default class ViewProperties extends NavigationMixin(LightningElement) {
     async renderedCallback() {
-        console.log("Near");
         this.setTextHeights();
     }
     
     async connectedCallback() {
-        console.log("Far");
         this.setTextHeights();
     }
 
     async tabActivated() {
-        console.log("Whereever");
         this.setTextHeights();
     }
 
