@@ -4,15 +4,15 @@ import getListofProperties from '@salesforce/apex/PropertyController.getListofPr
 import getListofSoldProperties from '@salesforce/apex/PropertyController.getListofSoldProperties';
 
 export default class ViewProperties extends NavigationMixin(LightningElement) {
-    async renderedCallback() {
+    renderedCallback() {
         this.setTextHeights();
     }
     
-    async connectedCallback() {
+    connectedCallback() {
         this.setTextHeights();
     }
 
-    async tabActivated() {
+    tabActivated() {
         this.setTextHeights();
     }
 

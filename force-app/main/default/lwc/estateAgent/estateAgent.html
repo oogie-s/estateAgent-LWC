@@ -1,0 +1,27 @@
+<template>
+  <lightning-card title="EstateAgent" icon-name="custom:custom14">
+    <template if:true={propertyTabs}>
+        <lightning-tabset variant="scoped" class="tabs">
+            <template for:each={propertyTabs} for:item="propertyTab">
+                <lightning-tab label={propertyTab.Name} key={propertyTab.Id}>
+                    <template if:true={propertyTab.Properties}>
+                        <template for:each={propertyTab.Properties} for:item="property">
+                            <div class="slds-grid slds-gutters" key={property.Id}>
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-3 slds-m-top_medium">
+                                    <img
+                                        data-id={property.Id}
+                                        src={property.Photo_1__c} />
+                                </div>
+                                <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-3 slds-m-top_medium textContainer" data-id={property.Id}>
+                                    <a data-id={property.Id} data-tab-id={propertyTab.Id} class="indProperty" label="propertyDetails" onclick={switchPropertyDetail}>{property.Name}</a><br>
+                                    <lightning-formatted-rich-text value={property.Description__c}></lightning-formatted-rich-text>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
+                </lightning-tab>
+            </template>
+        </lightning-tabset>
+    </template>
+  </lightning-card>
+</template>

@@ -1,0 +1,30 @@
+
+<template>    
+    <lightning-card variant="Narrow" >
+        <a onclick={switchPropertyDetail}>Go back</a>
+        <template if:true={propertyToView}>
+            <div class="slds-p-horizontal_small" style="text-align:center">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_7-of-12 left-column">
+                        <h2 >{propertyToView.Name}</h2>
+                        <p class="address">{propertyToView.Postal_Code__c},  {propertyToView.City__c}</p>
+                        <br><br>
+                        <lightning-formatted-rich-text value={propertyToView.Description__c}></lightning-formatted-rich-text>
+                        <br><br>
+                        <lightning-button onclick={handleClick} aria-haspopup="modal" class="slds-align_absolute-center buttonEnquire" label="Enquiries">
+                        </lightning-button> 
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                        <div class="photoContainer">
+                            <div class="photobanner">
+                                <span><img src={propertyToView.Photo_1__c} /></span>
+                                <span><img src={propertyToView.Photo_2__c} /></span>
+                                <span><img src={propertyToView.Photo_3__c} /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>
